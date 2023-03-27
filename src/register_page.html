@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Sprint Task 4</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+<div class="main">
+
+    <div class="head">
+        <p>TWITTER</p>
+        <div class="nav">
+            <a href="./login_page.html">Tweets</a>
+            <a href="./login_page.html">Login</a>
+            <a href="./register_page.html">Register</a>
+        </div>
+    </div>
+
+    <div class="content1">
+
+        <p>EMAIL:</p>
+        <input type="email" id="reg_email">
+
+        <p>PASSWORD:</p>
+        <input type="password" id="reg_password">
+
+        <p>FULL NAME:</p>
+        <input type="text" id="reg_name">
+
+        <p>COUNTRY:</p>
+        <select name="" id="selector1">
+            <option value="1">Kazakhstan</option>
+            <option value="2">USA</option>
+            <option value="3">Russia</option>
+            <option value="4">Canada</option>
+            <option value="5">China</option>
+            <option value="6">Japan</option>
+            <option value="7">Korea</option>
+        </select>
+
+        <p>BIRTHDATE:</p>
+        <input type="date" id="reg_birthdate">
+
+        <button id="reg_btn">REGISTER</button>
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+    const regBtn = document.getElementById("reg_btn");
+
+    regBtn.addEventListener("click", function() {
+        const email = document.getElementById("reg_email").value;
+        const password = document.getElementById("reg_password").value;
+        const name = document.getElementById("reg_name").value;
+        const country = document.getElementById("selector1").value;
+        const birthdate = document.getElementById("reg_birthdate").value;
+
+        const user = {
+            login: email,
+            password: password,
+            fullName: name,
+            country: country,
+            birthdate: birthdate
+        };
+
+        index = user.login
+
+        localStorage.setItem(index, JSON.stringify(user));
+        window.location.href = './login_page.html'
+    });
+
+</script>
+</body>
+</html>
